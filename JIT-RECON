@@ -65,7 +65,7 @@ if [[ -z $DOMAIN ]]; then
     usage
 fi
 
-# Create directory for the domain
+# Create directory for the domain.
 TARGET_DIR="$DOMAIN"
 mkdir -p "$TARGET_DIR"
 cd "$TARGET_DIR"
