@@ -65,7 +65,7 @@ if [[ -z $DOMAIN ]]; then
     usage
 fi
 
-# Create directory for the domain.
+# Create directory for the domain
 TARGET_DIR="$DOMAIN"
 mkdir -p "$TARGET_DIR"
 cd "$TARGET_DIR"
@@ -73,17 +73,6 @@ cd "$TARGET_DIR"
 ##############################################
 ############# WEB RECON ######################
 ##############################################
-
-if [[ $RUN_FIRST == true ]]; then
-    # input
-    printf "${GREEN}[+] Checking if the target is alive...${NORMAL}\n"
-    if ping -c 1 -W 1 "$DOMAIN" &> /dev/null; then
-        printf "\n${BOLD}${YELLOW}$DOMAIN${NORMAL} is alive!${NORMAL}\n\n"
-    else
-        printf "\n${BOLD}${YELLOW}$DOMAIN${RED} is not alive.${NORMAL}\n\n"
-        exit 1
-    fi
-
     printf "${GREEN}[+] Starting Footprinting and Reconnaissance on $DOMAIN${NORMAL}\n"
 
     # WHOIS
