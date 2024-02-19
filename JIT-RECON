@@ -116,7 +116,7 @@ if [[ $RUN_FIRST == true ]]; then
     subfinder -d "$DOMAIN" -v -o subfinder_result.txt
 
     # httpx
-    cat subfinder_result.txt | httpx -status-code -title -tech-detect > HTTPX_valid.txt
+    cat subfinder_result.txt | ~/go/bin/httpx -status-code -title -tech-detect > HTTPX_valid.txt
     cat HTTPX_valid.txt | awk '{print $1}' > nuclei_in.txt
 
     if [[ $? -ne 0 ]]; then
@@ -126,7 +126,7 @@ if [[ $RUN_FIRST == true ]]; then
 
     # Run nuclei
     printf "\n${GREEN}[+] Scanning for Vulns using nuclei${NORMAL}\n"
-    nuclei -l nuclei_in.txt -v -severity high,critical -c 50
+    ~/go/bin/nuclei -l nuclei_in.txt -v -severity high,critical -c 50
 fi
 
 #######################################################
