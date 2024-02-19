@@ -140,5 +140,5 @@ if [[ $RUN_SECOND == true ]]; then
 
     # subzy
     printf "${GREEN}[+] Checking subdomain takeover using Subzy${NORMAL}\n"
-    subzy run --targets subfinder_st_result.txt --hide_fails
+    ~/go/bin/subzy run --targets subfinder_st_result.txt --hide_fails
 fi
