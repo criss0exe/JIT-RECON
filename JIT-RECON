@@ -104,7 +104,7 @@ if [[ $RUN_FIRST == true ]]; then
     # robotScraper
     printf "\n${GREEN}[+] Robots.txt ${NORMAL}\n"
     printf "${NORMAL}${CYAN}Checking directories and files from robots.txt...${NORMAL}\n\n"
-    python3 ../py/robotScraper.py -d "$DOMAIN" -s output_robot.txt 
+    bash ../scsripts/JIT-ROBOTS -d "$DOMAIN" -s output_robot.txt 
 
     # nmap
     #printf "\n${GREEN}[+] Nmap ${NORMAL}\n"
